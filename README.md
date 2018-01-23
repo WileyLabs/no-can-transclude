@@ -23,6 +23,13 @@ $ http-server .
 
 You'll see a boring/ugly set of HTML and CSS to see what's (im)possible.
 
+## Help Wanted
+
+If you find a way to do this as minimally as possible, please send me a PR!
+
+The ideal solution would be something baked into the browsers. Until then, as
+little JS as possible would be best.
+
 # So many options...so little success...
 
 
