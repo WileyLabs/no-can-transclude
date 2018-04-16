@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width">
   <title>open in iframe</title>
 <style>
-iframe { display: none }
-iframe:target { display: block; border: 1px solid orange }
+iframe { display: none; border: none; }
+iframe:target { display: block; }
 input:checked + iframe { display: block }
 article > input[type="radio"] { display: none }
 
@@ -16,27 +16,37 @@ nav {
   width: 25%;
 }
 article {
-  float: right;
+  position: absolute;
+  height: 100%;
   width: 75%;
+  margin-left: 15%;
+}
+article iframe {
+  height: 100%
 }
 </style>
 </head>
 <body>
   <blockquote>
-    Empty iframes, but click the Chapter links to load a page into each.
+    Content is loaded into iframes with state managed by hidden checkboxes.
+    Click the links in the nav to load the stave/chapter/resource/page.
   </blockquote>
   <nav role="doc-toc">
+    Chapters:
     <li>
       <!-- label[for] selects the radio button "state machine" -->
       <label for="chapter1">
         <!-- href + the hash fragment sets the URL's hash fragment for state
           "storage" - allowing for page reload, bookmarking, etc. -->
-        <a href="#chapter1-iframe">Chapter 1</a>
+        <a href="#chapter1-iframe">Stave 1</a>
       </label>
     </li>
+    <li>Stave 2</li>
+    <li>Stave 3</li>
+    <li>Stave 4</li>
     <li>
-      <label for="chapter2">
-        <a href="#chapter2-iframe">Chapter 2</a>
+      <label for="chapter5">
+        <a href="#chapter5-iframe">Stave 5</a>
       </label>
     </li>
   </nav>
@@ -44,9 +54,9 @@ article {
   <article>
     <!-- radio group to store state -->
     <input name="page" type="radio" id="chapter1" />
-    <iframe name="chapter1-iframe" id="chapter1-iframe" src="here.html"></iframe>
-    <input name="page" type="radio" id="chapter2" />
-    <iframe name="chapter2-iframe" id="chapter2-iframe" src="there.html"></iframe>
+    <iframe name="chapter1-iframe" id="chapter1-iframe" src="stave1.html"></iframe>
+    <input name="page" type="radio" id="chapter5" />
+    <iframe name="chapter5-iframe" id="chapter5-iframe" src="stave5.html"></iframe>
   </article>
 
 </body>
