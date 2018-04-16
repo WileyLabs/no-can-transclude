@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>open in iframe</title>
+<style>
+iframe { display: none }
+iframe:target { display: block; border: 1px solid orange }
+input:checked + iframe { display: block }
+article > input[type="radio"] { display: none }
+
+/* layout */
+nav {
+  float: left;
+  width: 25%;
+}
+article {
+  float: right;
+  width: 75%;
+}
+</style>
+</head>
+<body>
+  <blockquote>
+    Empty iframes, but click the Chapter links to load a page into each.
+  </blockquote>
+  <nav role="doc-toc">
+    <li>
+      <!-- label[for] selects the radio button "state machine" -->
+      <label for="chapter1">
+        <!-- href + the hash fragment sets the URL's hash fragment for state
+          "storage" - allowing for page reload, bookmarking, etc. -->
+        <a href="#chapter1-iframe">Chapter 1</a>
+      </label>
+    </li>
+    <li>
+      <label for="chapter2">
+        <a href="#chapter2-iframe">Chapter 2</a>
+      </label>
+    </li>
+  </nav>
+
+  <article>
+    <!-- radio group to store state -->
+    <input name="page" type="radio" id="chapter1" />
+    <iframe name="chapter1-iframe" id="chapter1-iframe" src="here.html"></iframe>
+    <input name="page" type="radio" id="chapter2" />
+    <iframe name="chapter2-iframe" id="chapter2-iframe" src="there.html"></iframe>
+  </article>
+
+</body>
+</html>

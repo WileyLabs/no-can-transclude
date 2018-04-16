@@ -73,6 +73,12 @@ from parent to child.
 - http://juicy.github.io/imported-template/examples/index.html - same, but for
 templates
 
+# Bonus: [A Publishing Carol.](carol.html)
+
+This "bonus" content attempts to explore Web Publication concepts in the context of "transclusion" at the level we have it (which--as noted above--is nearly not at all).
+
+More will be done on this elsewhere, but for now, enjoy the read.
+
 # License
 
 MIT (for what little of this is actually license-able/usable)
