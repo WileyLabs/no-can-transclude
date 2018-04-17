@@ -1,0 +1,108 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://bigbluehat.github.io/no-can-transclude/carol.html
+Subject: open in iframe
+Date: Tue, 16 Apr 2018 20:57:11 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--1EASkXm1VyTzug0PY6Dh5GUGSz1J46sRuLA2B9bt4l----"
+
+------MultipartBoundary--1EASkXm1VyTzug0PY6Dh5GUGSz1J46sRuLA2B9bt4l----
+Content-Type: text/html
+Content-ID: <frame-5007-c4f993a8-ee3b-42f7-8b9d-f84e5f78faeb@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://bigbluehat.github.io/no-can-transclude/carol.html
+
+<!DOCTYPE html><html><head><meta http-equiv=3D"Content-Type" content=3D"tex=
+t/html; charset=3DUTF-8">
+ =20
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+  <title>open in iframe</title>
+<style>
+iframe { display: none; border: none; }
+iframe:target { display: block; }
+input:checked + iframe { display: block }
+article > input[type=3D"radio"] { display: none }
+
+/* layout */
+nav {
+  float: left;
+  width: 25%;
+}
+article {
+  position: absolute;
+  height: 100%;
+  width: 75%;
+  margin-left: 15%;
+}
+article iframe {
+  height: 100%
+}
+</style>
+</head>
+<body>
+  <blockquote>
+    Content is loaded into iframes with state managed by hidden checkboxes.
+    Click the links in the nav to load the stave/chapter/resource/page.
+  </blockquote>
+  <nav role=3D"doc-toc">
+    Chapters:
+    <li>
+      <!-- label[for] selects the radio button "state machine" -->
+      <label for=3D"chapter1">
+        <!-- href + the hash fragment sets the URL's hash fragment for stat=
+e
+          "storage" - allowing for page reload, bookmarking, etc. -->
+        <a href=3D"#chapter1-iframe">Stave 1</a>
+      </label>
+    </li>
+    <li>Stave 2</li>
+    <li>Stave 3</li>
+    <li>Stave 4</li>
+    <li>
+      <label for=3D"chapter5">
+        <a href=3D"#chapter5-iframe">Stave 5</a>
+      </label>
+    </li>
+  </nav>
+
+  <article>
+    <!-- radio group to store state -->
+    <input name=3D"page" type=3D"radio" id=3D"chapter1">
+    <iframe name=3D"chapter1-iframe" id=3D"chapter1-iframe" src=3D"cid:fram=
+e-5010-018f8c71-4172-4de4-b037-3a385af90e3d@mhtml.blink"></iframe>
+    <input name=3D"page" type=3D"radio" id=3D"chapter5">
+    <iframe name=3D"chapter5-iframe" id=3D"chapter5-iframe" src=3D"cid:fram=
+e-5011-cff033b6-e64f-49f7-9ad1-7a7da3968e3e@mhtml.blink"></iframe>
+  </article>
+
+
+
+</body></html>
+------MultipartBoundary--1EASkXm1VyTzug0PY6Dh5GUGSz1J46sRuLA2B9bt4l----
+Content-Type: text/html
+Content-ID: <frame-5010-018f8c71-4172-4de4-b037-3a385af90e3d@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://bigbluehat.github.io/no-can-transclude/stave1.html
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8"></head><body><h1>Stave One.</h1>
+<h2>Markup's Ghost.</h2>
+
+<p>Markup was dead: to begin with.</p>
+</body></html>
+------MultipartBoundary--1EASkXm1VyTzug0PY6Dh5GUGSz1J46sRuLA2B9bt4l----
+Content-Type: text/html
+Content-ID: <frame-5011-cff033b6-e64f-49f7-9ad1-7a7da3968e3e@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://bigbluehat.github.io/no-can-transclude/stave5.html
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8"></head><body><h1>Stave Five.</h1>
+<h2>The End of It.</h2>
+
+<p>Yes! and the viewport was his own. The browser was his own, the book was=
+ his own. Best and happiest of all, the Tech before him was his own, to mak=
+e amends in!</p>
+</body></html>
+------MultipartBoundary--1EASkXm1VyTzug0PY6Dh5GUGSz1J46sRuLA2B9bt4l------
