@@ -22,33 +22,41 @@ article {
 article iframe {
   height: 100%
 }
-    </style>
-  </head>
-  <body>
-    <blockquote>
-      Content is loaded into iframes with <code>id</code> attributes for local,
-      in context, "as part of the publication" references.
-    </blockquote>
-    <nav role="doc-toc">
-      Chapters:
-      <li>
-        <!-- href + the hash fragment sets the URL's hash fragment for state
-          "storage" - allowing for page reload, bookmarking, etc. -->
-          <a href="#chapter1">Stave 1</a>
-      </li>
-      <li>Stave 2</li>
-      <li>Stave 3</li>
-      <li>Stave 4</li>
-      <li>
-        <a href="#chapter5-iframe">Stave 5</a>
-      </li>
-    </nav>
+</style>
+</head>
+<body>
+  <blockquote>
+    Content is loaded into iframes with <code>id</code> attributes for local,
+    in context, "as part of the publication" references.
+  </blockquote>
+  <nav role="doc-toc">
+    Chapters:
+    <li>
+      <!-- href + the hash fragment sets the URL's hash fragment for state
+        "storage" - allowing for page reload, bookmarking, etc. -->
+      <a href="#chapter1">Stave 1</a>
+    </li>
+    <li>
+      <a href="#chapter2">Stave 2</a>
+    </li>
+    <li>
+      <a href="#chapter3">Stave 3</a>
+    </li>
+    <li>
+      <a href="#chapter4">Stave 4</a>
+    </li>
+    <li>
+      <a href="#chapter5">Stave 5</a>
+    </li>
+  </nav>
 
-    <article>
-      <!-- radio group to store state -->
-      <iframe id="chapter1" src="stave1.html"></iframe>
-      <iframe id="chapter5" src="stave5.html"></iframe>
-    </article>
+  <article>
+    <iframe id="chapter1" src="stave1.html"></iframe>
+    <iframe id="chapter2" src="stave2.html"></iframe>
+    <iframe id="chapter3" src="stave3.html"></iframe>
+    <iframe id="chapter4" src="stave4.html"></iframe>
+    <iframe id="chapter5" src="stave5.html"></iframe>
+  </article>
 
   </body>
 </html>
