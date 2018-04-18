@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>open in iframe</title>
-<style>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>open in iframe</title>
+    <style>
 iframe { display: none; border: none; }
 iframe:target { display: block; }
 
@@ -22,33 +22,33 @@ article {
 article iframe {
   height: 100%
 }
-</style>
-</head>
-<body>
-  <blockquote>
-    Content is loaded into iframes with <code>id</code> attributes for local,
-    in context, "as part of the publication" references.
-  </blockquote>
-  <nav role="doc-toc">
-    Chapters:
-    <li>
-      <!-- href + the hash fragment sets the URL's hash fragment for state
-        "storage" - allowing for page reload, bookmarking, etc. -->
-      <a href="#chapter1">Stave 1</a>
-    </li>
-    <li>Stave 2</li>
-    <li>Stave 3</li>
-    <li>Stave 4</li>
-    <li>
-      <a href="#chapter5-iframe">Stave 5</a>
-    </li>
-  </nav>
+    </style>
+  </head>
+  <body>
+    <blockquote>
+      Content is loaded into iframes with <code>id</code> attributes for local,
+      in context, "as part of the publication" references.
+    </blockquote>
+    <nav role="doc-toc">
+      Chapters:
+      <li>
+        <!-- href + the hash fragment sets the URL's hash fragment for state
+          "storage" - allowing for page reload, bookmarking, etc. -->
+          <a href="#chapter1">Stave 1</a>
+      </li>
+      <li>Stave 2</li>
+      <li>Stave 3</li>
+      <li>Stave 4</li>
+      <li>
+        <a href="#chapter5-iframe">Stave 5</a>
+      </li>
+    </nav>
 
-  <article>
-    <!-- radio group to store state -->
-    <iframe id="chapter1" src="stave1.html"></iframe>
-    <iframe id="chapter5" src="stave5.html"></iframe>
-  </article>
+    <article>
+      <!-- radio group to store state -->
+      <iframe id="chapter1" src="stave1.html"></iframe>
+      <iframe id="chapter5" src="stave5.html"></iframe>
+    </article>
 
-</body>
+  </body>
 </html>
