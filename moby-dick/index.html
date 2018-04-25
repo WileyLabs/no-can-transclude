@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Moby-Dick</title>
+
     <style>
 iframe { display: none; border: none; width: 100%;}
 iframe:target { display: block; }
 
 /* layout */
 
-nav:hover { width: 23%; }
-nav::before:hover { content: 'CONTENTS'; }
+
 
 /*
    Bold the anchor with an HREF that is *identical* to current location.href
@@ -21,22 +21,25 @@ nav::before:hover { content: 'CONTENTS'; }
 nav :local-link { font-weight: bold; }
 
 nav {
+display: none;
 position: fixed;
-top: 0;
-  width: 3%;
+top: 50px;
+  width: 2px;
   padding-right: 10px;
   height: 100%;
   overflow: scroll;
   background-color: #eee;
 }
 
+
+
 nav ol {
   list-style-type: none;
 }
 article {
   position: absolute;
-  left: 25%;
-  width: 72%;
+  left: 15%;
+  width: 70%;
   height: 100%;
 }
 article iframe {
@@ -45,7 +48,7 @@ article iframe {
     </style>
   </head>
   <body>
-    <nav role="doc-toc">
+    <nav id="toc" role="doc-toc">
       <ol>
         <li>
           <a href="#title-page">Moby-Dick</a>
@@ -615,5 +618,8 @@ article iframe {
       <iframe id="c136" src="c136.html"></iframe>
     </article>
 
+<script src="../nav.js"></script>
+<script src="../sw.js"></script>
+<script src="../offline.js"></script>
   </body>
 </html>
