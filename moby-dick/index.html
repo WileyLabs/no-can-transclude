@@ -13,6 +13,13 @@ iframe:target { display: block; }
 nav:hover { width: 23%; }
 nav::before:hover { content: 'CONTENTS'; }
 
+/*
+   Bold the anchor with an HREF that is *identical* to current location.href
+   Someday...maybe soon:
+   https://www.w3.org/TR/selectors-4/#the-local-link-pseudo
+*/
+nav :local-link { font-weight: bold; }
+
 nav {
 position: fixed;
 top: 0;
