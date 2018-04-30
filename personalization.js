@@ -59,10 +59,10 @@ nightButton.style.borderColor = 'rebeccapurple';
 nightButton.style.paddingBottom = '0px';
 nightButton.style.paddingRight = '0px';
 nightButton.style.right = '0%';
-nightButton.style.borderBottomLeftRadius = '40px';
-nightButton.style.borderTopLeftRadius = '40px';
-nightButton.style.height = '40px';
-nightButton.style.width = '40px';
+nightButton.style.borderBottomLeftRadius = '60px';
+nightButton.style.borderTopLeftRadius = '60px';
+nightButton.style.height = '60px';
+nightButton.style.width = '60px';
 document.body.prepend(nightButton);
 
 
