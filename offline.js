@@ -34,7 +34,7 @@ function collectSpine() {
 }
 
 function checkCachedStatus(cache) {
-  let toolbar = document.getElementById('web-publication-toolbar');
+  let toolbar = document.getElementById('keep');
   let spine = collectSpine();
   for (let resource of spine) {
     cache.match(resource.href).then((response) => {
@@ -76,19 +76,47 @@ function keep() {
     // everything...again
     checkCachedStatus(cache);
   });
-}
+};
 
 function discard() {
+console.log('discard');
   caches.delete(publication_path).then((status) => {
     // TODO: actually check the status...
     let pubbar = document.getElementById('web-publication-toolbar');
     pubbar.classList.remove('offline');
   });
-}
+};
+
+
+
+var keepMe = document.createElement('button');
+keepMe.innerHTML = 'KEEP';
+keepMe.setAttribute('id', 'web-publication-toolbar');
+keepMe.setAttribute('onclick', 'keep();');
+keepMe.style.position = 'fixed';
+keepMe.style.top = '0';
+keepMe.style.backgroundColor = 'rebeccapurple';
+keepMe.style.color = 'white';
+keepMe.style.fontWeight = 'bold';
+keepMe.style.fontSize = '15px';
+keepMe.style.borderStyle = 'solid';
+keepMe.style.borderColor = 'rebeccapurple';
+keepMe.style.paddingBottom = '15px';
+keepMe.style.paddingLeft = '15px';
+keepMe.style.right = '0';
+keepMe.style.borderTopLeftRadius = '0';
+keepMe.style.borderBottomLeftRadius = '75px';
+keepMe.style.height = '75px';
+keepMe.style.width = '75px';
+document.body.prepend(keepMe);
+
+/* 
 
 var pubbar = document.createElement('div');
+
 pubbar.innerHTML = `
   <style>
+  #web-publication-toolbar button { background-color: rebeccapurple; color: white; font-weight: bold }
   #web-publication-toolbar .keep { display: block }
   #web-publication-toolbar .message { background: #efefef; display: none }
   #web-publication-toolbar .offline.keep { display:none }
@@ -96,16 +124,19 @@ pubbar.innerHTML = `
   </style>
   <div id="web-publication-toolbar">
     <button class="keep" onclick="keep()" title="download all ToC referenced pages">
-      Cache The 📖 Offline
+      Cache Book
     </button>
     <div class="message">
-      You have kept a copy of this Web Publication.
-      <button class="discard" onclick="discard()">Discard 📖</button>
+      Book Cached
+      <button class="discard" onclick="discard()">Discard Book</button>
     </div>
   </div>
 `;
 
+
 document.body.prepend(pubbar);
+
+ */
 
 caches.keys().then((keys) => {
   // TODO: we need to know more than that the cache exists...

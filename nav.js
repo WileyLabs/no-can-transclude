@@ -20,6 +20,17 @@ function prevPage() {
   
     window.location.hash = navList[navList.indexOf(currentTarget) + 1];
   }
+  
+  
+   function showTOC() {
+    var tableOfContents = document.getElementById('toc');
+    
+    if (tableOfContents.style.display === "none") {
+        tableOfContents.style.display = "block";
+    } else {
+        tableOfContents.style.display = "none";
+    }
+    };
 
 var prevButton = document.createElement('button');
 prevButton.innerHTML = '&lt;';
@@ -61,6 +72,27 @@ nextButton.style.borderBottomLeftRadius = '30px';
 nextButton.style.height = '50px';
 nextButton.style.width = '50px';
 document.body.prepend(nextButton);
+
+var tocButton = document.createElement('button');
+tocButton.innerHTML = 'TOC';
+tocButton.setAttribute('id', 'toc-button');
+tocButton.setAttribute('onclick', 'showTOC();');
+tocButton.style.position = 'fixed';
+tocButton.style.top = '0%';
+tocButton.style.backgroundColor = 'rebeccapurple';
+tocButton.style.color = 'white';
+tocButton.style.fontWeight = 'bold';
+tocButton.style.fontSize = '15px';
+tocButton.style.borderStyle = 'solid';
+tocButton.style.borderColor = 'rebeccapurple';
+tocButton.style.paddingBottom = '15px';
+tocButton.style.paddingRight = '15px';
+tocButton.style.left = '0px';
+tocButton.style.borderTopRightRadius = '0px';
+tocButton.style.borderBottomRightRadius = '75px';
+tocButton.style.height = '75px';
+tocButton.style.width = '75px';
+document.body.prepend(tocButton);
 
 
 

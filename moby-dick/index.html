@@ -6,7 +6,8 @@
     <title>Moby-Dick</title>
 
     <style>
-iframe { display: none; border: none; width: 100%;}
+article iframe { height: 100%; }
+iframe { display: none; }
 iframe:target { display: block; }
 
 /* layout */
@@ -20,7 +21,10 @@ iframe:target { display: block; }
 */
 nav :local-link { font-weight: bold; }
 
+nav:hover { width: 200px; }
+
 nav {
+  z-index: -1;
 display: none;
 position: fixed;
 top: 50px;
@@ -29,6 +33,8 @@ top: 50px;
   height: 100%;
   overflow: scroll;
   background-color: #eee;
+  border-top-left-radius: 75px;
+  border-top-right-radius: 75px;
 }
 
 
@@ -42,18 +48,18 @@ article {
   width: 70%;
   height: 100%;
 }
-article iframe {
-  height: 100%;
-}
+
     </style>
   </head>
   <body>
     <nav id="toc" role="doc-toc">
       <ol>
         <li>
-          <a href="#title-page">Moby-Dick</a>
+          <a href="c022.html#fig1" target="c022">Voyage of the Pequod</a>
         </li>
-
+        <li>
+          <a href="#title-page" target="pageFrame">Moby-Dick</a>
+        </li>
         <li>
           <a href="#copyright">Copyright</a>
         </li>
@@ -619,10 +625,13 @@ article iframe {
     </article>
 
 <!--our shims-->
-<script src="../state.js">
-</script>
+<script src="../personalization.js"></script>
+<!--<script src="../state.js"></script>-->
 <script src="../nav.js">
 </script>
+
+<script src="../links.js"></script>
+
 <!--
 <script src="../sw.js"></script>
 <script src="../offline.js"></script>
