@@ -23,7 +23,7 @@ function prevPage() {
   
   
    function showTOC() {
-    var tableOfContents = document.getElementById('toc');
+    var tableOfContents = document.querySelectorAll('nav[role="doc-toc"]')[0];
     
     if (tableOfContents.style.display === "none") {
         tableOfContents.style.display = "block";
