@@ -12,12 +12,8 @@ body {
 			
 			/* layout */
 			
-			nav:hover {
-			width: 200px;
-			
-			}
 			nav {
-			z-index: -1;
+			z-index: 1;
 			display: none;
 			position: fixed;
 			top: 50px;
@@ -34,9 +30,12 @@ body {
 			list-style-type: none;
 			}
 			article {
+
+			top: 0;
+			left: 30px;
+			right: 30px;
+			bottom: 0;
 			 position: absolute;
-			 left: 220px;
-			 width: 70%;
-			 height: 100%;
+			 z-index: -1;
 			}
 		

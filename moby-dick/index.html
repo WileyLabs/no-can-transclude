@@ -4,52 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Moby-Dick</title>
-
-    <style>
-article iframe { height: 100%; }
-iframe { display: none; }
-iframe:target { display: block; }
-
-/* layout */
-
-
-
-/*
-   Bold the anchor with an HREF that is *identical* to current location.href
-   Someday...maybe soon:
-   https://www.w3.org/TR/selectors-4/#the-local-link-pseudo
-*/
-nav :local-link { font-weight: bold; }
-
-nav:hover { width: 200px; }
-
-nav {
-  z-index: -1;
-display: none;
-position: fixed;
-top: 50px;
-  width: 2px;
-  padding-right: 10px;
-  height: 100%;
-  overflow: scroll;
-  background-color: #eee;
-  border-top-left-radius: 75px;
-  border-top-right-radius: 75px;
-}
-
-
-
-nav ol {
-  list-style-type: none;
-}
-article {
-  position: absolute;
-  left: 15%;
-  width: 70%;
-  height: 100%;
-}
-
-    </style>
+	<link rel="stylesheet" href="../index.css" type="text/css" />
   </head>
   <body>
     <nav id="toc" role="doc-toc">
