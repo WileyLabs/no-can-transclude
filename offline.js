@@ -90,24 +90,24 @@ console.log('discard');
 
 
 var keepMe = document.createElement('button');
-keepMe.innerHTML = 'KEEP';
+keepMe.innerHTML = '&#x1f4be;';
 keepMe.setAttribute('id', 'web-publication-toolbar');
 keepMe.setAttribute('onclick', 'keep();');
 keepMe.style.position = 'fixed';
-keepMe.style.top = '0';
+keepMe.style.top = '60px';
 keepMe.style.backgroundColor = 'rebeccapurple';
 keepMe.style.color = 'white';
 keepMe.style.fontWeight = 'bold';
-keepMe.style.fontSize = '15px';
+keepMe.style.fontSize = '23px';
 keepMe.style.borderStyle = 'solid';
 keepMe.style.borderColor = 'rebeccapurple';
-keepMe.style.paddingBottom = '15px';
-keepMe.style.paddingLeft = '15px';
+keepMe.style.paddingBottom = '0px';
+keepMe.style.paddingLeft = '0px';
 keepMe.style.right = '0';
-keepMe.style.borderTopLeftRadius = '0';
-keepMe.style.borderBottomLeftRadius = '75px';
-keepMe.style.height = '75px';
-keepMe.style.width = '75px';
+keepMe.style.borderTopLeftRadius = '30px';
+keepMe.style.borderBottomLeftRadius = '30px';
+keepMe.style.height = '30px';
+keepMe.style.width = '30px';
 document.body.prepend(keepMe);
 
 /* 
