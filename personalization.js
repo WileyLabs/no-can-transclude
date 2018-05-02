@@ -17,10 +17,10 @@ bigButton.style.borderColor = 'rebeccapurple';
 bigButton.style.paddingBottom = '0px';
 bigButton.style.paddingRight = '15px';
 bigButton.style.left = '0px';
-bigButton.style.borderTopRightRadius = '40px';
+bigButton.style.borderTopRightRadius = '30px';
 bigButton.style.borderBottomRightRadius = '0px';
-bigButton.style.height = '40px';
-bigButton.style.width = '40px';
+bigButton.style.height = '30px';
+bigButton.style.width = '30px';
 document.body.prepend(bigButton);
 
 var smallButton = document.createElement('button');
@@ -37,32 +37,33 @@ smallButton.style.borderColor = 'rebeccapurple';
 smallButton.style.paddingBottom = '0px';
 smallButton.style.paddingRight = '0px';
 smallButton.style.right = '0px';
-smallButton.style.borderTopLeftRadius = '40px';
+smallButton.style.borderTopLeftRadius = '30px';
 smallButton.style.borderBottomLeftRadius = '0px';
-smallButton.style.height = '40px';
-smallButton.style.width = '40px';
+smallButton.style.height = '30px';
+smallButton.style.width = '30px';
 document.body.prepend(smallButton);
 
 
 var nightButton = document.createElement('button');
-nightButton.innerHTML = 'night';
+nightButton.innerHTML = '&#x2600';
 nightButton.value = 'Night';
 nightButton.setAttribute('id', 'night-button');
 nightButton.style.position = 'fixed';
-nightButton.style.top = '25%';
+nightButton.style.top = '0';
 nightButton.style.backgroundColor = 'rebeccapurple';
 nightButton.style.color = 'white';
 nightButton.style.fontWeight = 'bold';
-nightButton.style.fontSize = '15px';
+nightButton.style.fontSize = '24px';
 nightButton.style.borderStyle = 'solid';
 nightButton.style.borderColor = 'rebeccapurple';
-nightButton.style.paddingBottom = '0px';
+nightButton.style.paddingBottom = '6px';
+nightButton.style.paddingLeft = '9px';
 nightButton.style.paddingRight = '0px';
 nightButton.style.right = '0%';
-nightButton.style.borderBottomLeftRadius = '60px';
-nightButton.style.borderTopLeftRadius = '60px';
-nightButton.style.height = '60px';
-nightButton.style.width = '60px';
+nightButton.style.borderBottomLeftRadius = '45px';
+nightButton.style.borderTopLeftRadius = '0px';
+nightButton.style.height = '45px';
+nightButton.style.width = '45px';
 document.body.prepend(nightButton);
 
 
