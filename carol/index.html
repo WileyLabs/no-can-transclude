@@ -4,59 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>open in iframe</title>
-    <style>
-iframe { display: none; border: none; }
-iframe:target { display: block; }
-
-/* layout */
-nav {
-  float: left;
-  width: 25%;
-}
-article {
-  position: absolute;
-  height: 100%;
-  width: 75%;
-  margin-left: 15%;
-}
-article iframe {
-  height: 100%
-}
-</style>
+    <style>iframe {width: 100%}</style>
 </head>
 <body>
-  <blockquote>
-    Content is loaded into iframes with <code>id</code> attributes for local,
-    in context, "as part of the publication" references.
-  </blockquote>
-  <nav role="doc-toc">
-    Chapters:
-    <li>
-      <!-- href + the hash fragment sets the URL's hash fragment for state
-        "storage" - allowing for page reload, bookmarking, etc. -->
-      <a href="#chapter1">Stave 1</a>
-    </li>
-    <li>
-      <a href="#chapter2">Stave 2</a>
-    </li>
-    <li>
-      <a href="#chapter3">Stave 3</a>
-    </li>
-    <li>
-      <a href="#chapter4">Stave 4</a>
-    </li>
-    <li>
-      <a href="#chapter5">Stave 5</a>
-    </li>
-  </nav>
-
-  <article>
-    <iframe id="chapter1" src="stave1.html"></iframe>
-    <iframe id="chapter2" src="stave2.html"></iframe>
-    <iframe id="chapter3" src="stave3.html"></iframe>
-    <iframe id="chapter4" src="stave4.html"></iframe>
-    <iframe id="chapter5" src="stave5.html"></iframe>
-  </article>
-
+    <p>This version of the publication is no longer available.</p>
+    <ul>
+      <li>
+        <a rel="latest-version"
+           href="https://wileylabs.github.io/no-can-transclude/carol/">Latest Publication URL</a>
+      </li>
+    </ul>
+    <hr />
+    <h4>See?</h4>
+    <iframe src="https://wileylabs.github.io/no-can-transclude/carol/"></iframe>
   </body>
 </html>

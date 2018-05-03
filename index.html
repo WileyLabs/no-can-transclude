@@ -1,59 +1,15 @@
 <html>
   <head>
     <link rel="stylesheet" href="styles.css">
-    <meta name="description" content="a book. srsly.">
-    <script>
-      console.log('hi!');
-    </script>
-    <script id="metadata" type="application/ld+json">
-      {"@id": "urn:example:book", "@type": "schema:Book"}
-    </script>
-    <style title="for-page" media="publication-page">
-      h1 { color: green; }
-    </style>
   </head>
   <body>
-    <h1>No Can Transclude!</h1>
-    <p>Below are examples of attempts to <a href="https://en.wikipedia.org/wiki/Transclusion">transclude</a> content into this page. None of them completely work...but that's rather the point.</p>
-    <p>This <a href="https://github.com/BigBlueHat/no-can-transclude/">repository</a> contains other attempts at addressing the need for aggregate documents built via transclusion (of various kinds). The hope is to find what's missing in HTML (et al) that might make transclusion possible.</p>
-    <h2>Publication examples</h2>
-    <p>Also, checkout these transclusion enhanced publication attempts:
+    <h1>No Can Transclude has moved!</h1>
+    <p>This version of the publication is no longer available.</p>
     <ul>
-      <li><a href="carol/">Carol</a> - just iframes</li>
-      <li><a href="moby-dick/">Moby-Dick</a> - iframes + "reader" built via JS</li>
-      <li><a href="html5/">HTML5</a> - the HTML5 spec built via iframes + "reader"</li>
+      <li>
+        <a rel="latest-version"
+           href="https://wileylabs.github.io/no-can-transclude/">Latest Publication URL</a>
+      </li>
     </ul>
-    <p>Once we find what's needed, we hope to polyfill it, and make transclusion and the aggregate-document idea a reality on the Web.</p>
-    <h2>Example attempts</h2>
-    <h3>Some remote iframes</h3>
-    <iframe name="example" src="http://example.com/"></iframe>
-    <iframe name="google" src="http://google.com/"></iframe>
-    <h3>Some local iframes</h3>
-    <ol>
-      <li>Just an iframe</li>
-      <li>An iframe with the <a href="https://www.thefreedictionary.com/woebegone" title="...see definition 2...">woebegone</a> <code>seamless</code> attribute.</li>
-    </ol>
-    <iframe name="here" src="here.html"></iframe>
-    <iframe name="here" src="here.html" seamless></iframe>
-    <h4>Local content in iframes</h4>
-    <ol>
-      <li>Uses "fallback" HTML inside the iframe (like a div...but with an ugly border...).</li>
-      <li>Uses <code>srcdoc</code> attribute to put HTML inside an attribute of some HTML...</li>
-    </ol>
-    <iframe name="inline"><h1>hi from inline!</h1></iframe>
-    <iframe name="srcdoc" srcdoc="<h1>Hi from srcdoc!</h1>"></iframe>
-    <h4>Object tags!</h4>
-    <p>Simple object tags with <code>type="text/html"</code>. Second example uses <code>data</code> attribute to point to a local file.</p>
-    <object type="text/html">
-      <h1>Stuff from inside an inline object.</h1>
-    </object>
-    <hr>
-    <object type="text/html" data="here.html"></object>
-    <h4>Embed tags!</h4>
-    <p>Nearly identical to the above example, but with embed and src.</p>
-    <embed type="text/html">
-      <h1>Stuff from inside an inline embed</h1>
-    </embed>
-    <embed type="text/html" src="here.html"></embed>
   </body>
 </html>
