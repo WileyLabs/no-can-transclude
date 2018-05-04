@@ -25,6 +25,7 @@ let head = `
     width: 50%;
     height: 1.5em;
     text-align: center;
+    background: white;
     border: 1px solid black;
     border-radius: 0 0 25px 25px;
     border-top: none;
@@ -43,8 +44,8 @@ let head = `
 let dialog = `
   <dialog id="reader">
     <div class="nav">
-      <a href="">previous</a>
-      <a href="">next</a>
+      <a accesskey="p">previous</a>
+      <a accesskey="n">next</a>
     </div>
     <iframe name="content-frame"></iframe>
   </dialog>
