@@ -3,25 +3,36 @@
 var allIframes = document.getElementsByTagName('iframe');
 
 
-var bigButton = document.createElement('button');
-bigButton.innerHTML = '+';
-bigButton.setAttribute('id', 'larger-font-button');
-bigButton.style.position = 'fixed';
-bigButton.style.bottom = '0';
-bigButton.style.backgroundColor = 'rebeccapurple';
-bigButton.style.color = 'white';
-bigButton.style.fontWeight = 'bold';
-bigButton.style.fontSize = '15px';
-bigButton.style.borderStyle = 'solid';
-bigButton.style.borderColor = 'rebeccapurple';
-bigButton.style.paddingBottom = '0px';
-bigButton.style.paddingRight = '15px';
-bigButton.style.left = '0px';
-bigButton.style.borderTopRightRadius = '30px';
-bigButton.style.borderBottomRightRadius = '0px';
-bigButton.style.height = '30px';
-bigButton.style.width = '30px';
-document.body.prepend(bigButton);
+var largerFontButton = document.createElement('button');
+largerFontButton.innerHTML = '+';
+largerFontButton.setAttribute('id', 'larger-font-button');
+largerFontButton.style.position = 'fixed';
+largerFontButton.style.bottom = '0';
+largerFontButton.style.backgroundColor = 'rebeccapurple';
+largerFontButton.style.color = 'white';
+largerFontButton.style.fontWeight = 'bold';
+largerFontButton.style.fontSize = '15px';
+largerFontButton.style.borderStyle = 'solid';
+largerFontButton.style.borderColor = 'rebeccapurple';
+largerFontButton.style.paddingBottom = '0px';
+largerFontButton.style.paddingRight = '15px';
+largerFontButton.style.left = '0px';
+largerFontButton.style.borderTopRightRadius = '30px';
+largerFontButton.style.borderBottomRightRadius = '0px';
+largerFontButton.style.height = '30px';
+largerFontButton.style.width = '30px';
+//want to increase/decrease font size inside iframes
+largerFontButton.addEventListener('click', function() {
+  console.log('clicked larger-font-button');
+  for (var i = 0; i < allIframes.length; i++) {
+    var cur = window.getComputedStyle(allIframes[i].contentWindow.document.getElementsByTagName('body')[0]).fontSize;
+    allIframes[i].contentWindow.document.getElementsByTagName('body')[0].style.fontSize = parseInt(cur) + 2 + "px"
+  }
+  },
+false);
+// add to the ToC's DOM
+document.body.prepend(largerFontButton);
+
 
 var smallButton = document.createElement('button');
 smallButton.innerHTML = '-';
@@ -41,6 +52,14 @@ smallButton.style.borderTopLeftRadius = '30px';
 smallButton.style.borderBottomLeftRadius = '0px';
 smallButton.style.height = '30px';
 smallButton.style.width = '30px';
+smallButton.addEventListener('click', function() {
+  console.log('clicked smaller-font-button');
+  var allIframes = document.getElementsByTagName('iframe');
+  for (var i = 0; i < allIframes.length; i++) {
+    var cur = window.getComputedStyle(allIframes[i].contentWindow.document.getElementsByTagName('body')[0]).fontSize;
+    allIframes[i].contentWindow.document.getElementsByTagName('body')[0].style.fontSize = parseInt(cur) - 2 + "px"
+  }
+}, false);
 document.body.prepend(smallButton);
 
 
@@ -64,11 +83,7 @@ nightButton.style.borderBottomLeftRadius = '45px';
 nightButton.style.borderTopLeftRadius = '0px';
 nightButton.style.height = '45px';
 nightButton.style.width = '45px';
-document.body.prepend(nightButton);
-
-
-var nightLink = document.getElementById('night-button');
-nightLink.addEventListener('click', function() {
+nightButton.addEventListener('click', function() {
 if (nightLink.value === "Night") {
   for (var i = 0; i < allIframes.length; i++) {
     allIframes[i].contentWindow.document.getElementsByTagName('html')[0].style.filter = 'invert(1) hue-rotate(180deg)';
@@ -90,25 +105,4 @@ if (nightLink.value === "Night") {
     nightLink.value = 'Night';
   }
 }, false);
-
-//want to increase/decrease font size inside iframes
-fontPluslink = document.getElementById('larger-font-button');
-fontPluslink.addEventListener('click', function() {
-
-  console.log('clicked larger-font-button');
-  for (var i = 0; i < allIframes.length; i++) {
-    var cur = window.getComputedStyle(allIframes[i].contentWindow.document.getElementsByTagName('body')[0]).fontSize;
-    allIframes[i].contentWindow.document.getElementsByTagName('body')[0].style.fontSize = parseInt(cur) + 2 + "px"
-  }
-  },
-  false);
-
-fontMinuslink = document.getElementById('smaller-font-button');
-fontMinuslink.addEventListener('click', function() {
-  console.log('clicked smaller-font-button');
-  var allIframes = document.getElementsByTagName('iframe');
-  for (var i = 0; i < allIframes.length; i++) {
-    var cur = window.getComputedStyle(allIframes[i].contentWindow.document.getElementsByTagName('body')[0]).fontSize;
-    allIframes[i].contentWindow.document.getElementsByTagName('body')[0].style.fontSize = parseInt(cur) - 2 + "px"
-  }
-}, false);
+document.body.prepend(nightButton);
