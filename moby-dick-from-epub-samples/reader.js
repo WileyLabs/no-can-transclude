@@ -2,6 +2,12 @@
 let head = `
 <base target="content-frame" />
 <style>
+  :-moz-full-screen  { background: red; }
+  :-webkit-full-screen-ancestor { background: white; }
+  :-webkit-full-screen-ancestor body { width: 100% }
+  :-ms-fullscreen { background: red; }
+  :fullscreen { background: red; }
+
   dialog {
     width: 90vw;
     height: 90vh;
@@ -43,8 +49,9 @@ let head = `
 let dialog = `
   <dialog id="reader">
     <div class="nav">
-      <a href="">previous</a>
-      <a href="">next</a>
+      <a rel="previous" href="">previous</a>
+      <a class="fullscreen" href="">fullscreen</a>
+      <a rel="next" href="">next</a>
     </div>
     <iframe name="content-frame"></iframe>
   </dialog>
@@ -57,9 +64,38 @@ document.body.insertAdjacentHTML('afterbegin', dialog);
 // TODO: web components...maybe?
 let reader = document.getElementById('reader');
 
+// immersive reading ftw!
+let fullscreen = reader.querySelector('a.fullscreen');
+fullscreen.addEventListener('click', (ev) => {
+  ev.preventDefault();
+  ev.stopPropagation();
+
+  let enabled = document.fullscreenEnabled || document.mozFullScreen
+    || document.webkitIsFullScreen;
+  let element = parent.document.body;
+
+  if (!enabled) {
+    if (element.requestFullscreen) { // W3C API
+      element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Mozilla current API
+      element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullScreen) { // Webkit current API
+      element.webkitRequestFullScreen();
+    } // Maybe other prefixed APIs?
+  } else {
+    if (document.exitFullscreen) { // W3C API
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Mozilla current API
+      document.mozCancelFullScreen();
+    } else if (document.webkitCancelFullScreen) { // Webkit current API
+      document.webkitCancelFullScreen();
+    } // Maybe other prefixed APIs?
+  }
+});
+
 // reader nav
-let prev = reader.querySelector('a:first-child');
-let next = reader.querySelector('a:last-child');
+let prev = reader.querySelector('a[rel=previous]');
+let next = reader.querySelector('a[rel=next]');
 
 function setPrevNext(target) {
   prev.href = target.parentElement.previousElementSibling.querySelector('a').href;
