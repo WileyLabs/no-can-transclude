@@ -4,33 +4,29 @@
 // dauwhe, 4.24.2018
 // all credit to bigbluehat
 var contents = document.querySelectorAll('nav[role="doc-toc"] a');
-  var navList = [];
-  for (var i = 0; i < contents.length; i++) {
-    navList.push(contents[i].getAttribute('href'));
-  }
+var navList = [];
+for (var i = 0; i < contents.length; i++) {
+  navList.push(contents[i].getAttribute('href'));
+}
 function prevPage() {
   console.log('clicked previous page');
   var currentTarget = window.location.hash;
-    window.location.hash = navList[navList.indexOf(currentTarget) - 1];
-  }
-  
-  
-  function nextPage() {
+  window.location.hash = navList[navList.indexOf(currentTarget) - 1];
+}
+
+function nextPage() {
   var currentTarget = window.location.hash;
-  
-    window.location.hash = navList[navList.indexOf(currentTarget) + 1];
+  window.location.hash = navList[navList.indexOf(currentTarget) + 1];
+}
+
+function showTOC() {
+  var tableOfContents = document.querySelectorAll('nav[role="doc-toc"]')[0];
+  if (tableOfContents.style.display === "none") {
+      tableOfContents.style.display = "block";
+  } else {
+      tableOfContents.style.display = "none";
   }
-  
-  
-   function showTOC() {
-    var tableOfContents = document.querySelectorAll('nav[role="doc-toc"]')[0];
-    
-    if (tableOfContents.style.display === "none") {
-        tableOfContents.style.display = "block";
-    } else {
-        tableOfContents.style.display = "none";
-    }
-    };
+};
 
 var prevButton = document.createElement('button');
 prevButton.innerHTML = '&lt;';
@@ -94,6 +90,3 @@ tocButton.style.borderBottomRightRadius = '45px';
 tocButton.style.height = '45px';
 tocButton.style.width = '45px';
 document.body.prepend(tocButton);
-
-
-

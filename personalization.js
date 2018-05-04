@@ -68,9 +68,6 @@ document.body.prepend(nightButton);
 
 
 var nightLink = document.getElementById('night-button');
-
-
-
 nightLink.addEventListener('click', function() {
 if (nightLink.value === "Night") {
   for (var i = 0; i < allIframes.length; i++) {
@@ -78,37 +75,23 @@ if (nightLink.value === "Night") {
     allIframes[i].contentWindow.document.getElementsByTagName('html')[0].style.background = 'black';
     document.getElementsByTagName('body')[0].style.background = 'black';
   }
-  
+
     // need to check for img elements before altering styles
     // code TK... if there's no IMG then getElementsByTagName returns an empty array
     //inside.getElementsByTagName('img').style.filter = 'invert(1) hue-rotate(180deg)';
 
     nightLink.value = 'Day';
   } else {
-  
-  
-  for (var i = 0; i < allIframes.length; i++) {
-    allIframes[i].contentWindow.document.getElementsByTagName('html')[0].style.filter = 'invert(0) hue-rotate(0deg)';
-    allIframes[i].contentWindow.document.getElementsByTagName('html')[0].style.background = 'white';
-    document.getElementsByTagName('body')[0].style.background = 'white';
-  }
-
+    for (var i = 0; i < allIframes.length; i++) {
+      allIframes[i].contentWindow.document.getElementsByTagName('html')[0].style.filter = 'invert(0) hue-rotate(0deg)';
+      allIframes[i].contentWindow.document.getElementsByTagName('html')[0].style.background = 'white';
+      document.getElementsByTagName('body')[0].style.background = 'white';
+    }
     nightLink.value = 'Night';
-  
   }
-
 }, false);
 
-
-
-
-
-
-
 //want to increase/decrease font size inside iframes
-
-
-
 fontPluslink = document.getElementById('larger-font-button');
 fontPluslink.addEventListener('click', function() {
 
@@ -119,25 +102,13 @@ fontPluslink.addEventListener('click', function() {
   }
   },
   false);
-  
-  
-  
-  
-  
-  fontMinuslink = document.getElementById('smaller-font-button');
-fontMinuslink.addEventListener('click', function() {
 
+fontMinuslink = document.getElementById('smaller-font-button');
+fontMinuslink.addEventListener('click', function() {
   console.log('clicked smaller-font-button');
   var allIframes = document.getElementsByTagName('iframe');
   for (var i = 0; i < allIframes.length; i++) {
     var cur = window.getComputedStyle(allIframes[i].contentWindow.document.getElementsByTagName('body')[0]).fontSize;
     allIframes[i].contentWindow.document.getElementsByTagName('body')[0].style.fontSize = parseInt(cur) - 2 + "px"
   }
-  },
-  false);
-
-
-
-
-
-    
+}, false);
