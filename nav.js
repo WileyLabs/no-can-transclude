@@ -20,8 +20,9 @@ function nextPage() {
 }
 
 function showTOC() {
-  var tableOfContents = document.querySelectorAll('nav[role="doc-toc"]')[0];
-  if (tableOfContents.style.display === "none") {
+  var tableOfContents = document.querySelector('nav[role="doc-toc"]');
+  if (tableOfContents.style.display === ""
+    || tableOfContents.style.display === "none") {
       tableOfContents.style.display = "block";
   } else {
       tableOfContents.style.display = "none";
