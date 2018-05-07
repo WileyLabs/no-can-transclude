@@ -34,7 +34,6 @@ function collectSpine() {
 }
 
 function checkCachedStatus(cache) {
-  let toolbar = document.getElementById('keep');
   let spine = collectSpine();
   for (let resource of spine) {
     cache.match(resource.href).then((response) => {
@@ -42,7 +41,7 @@ function checkCachedStatus(cache) {
         // let's just make sure anything's in here for now...
         // TODO: output a % of contents cached? that'd be nice...
         console.log(resource.href, response.status);
-        toolbar.classList.add('offline');
+        keepMe.classList.add('offline');
         return;
       }
     });
@@ -142,7 +141,6 @@ caches.keys().then((keys) => {
   // TODO: we need to know more than that the cache exists...
   // ...do we have primary resources in it yet?
   let cache_exists = keys.indexOf(publication_path) > -1;
-  let toolbar = document.getElementById('web-publication-toolbar');
   console.log('toolbar', toolbar);
   if (cache_exists) {
     // now check to see if that cache has any publication contents
@@ -150,6 +148,6 @@ caches.keys().then((keys) => {
       checkCachedStatus(cache);
     });
   } else {
-    toolbar.classList.remove('offline');
+    keepMe.classList.remove('offline');
   }
 });
