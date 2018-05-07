@@ -84,11 +84,13 @@ nightButton.style.borderTopLeftRadius = '0px';
 nightButton.style.height = '45px';
 nightButton.style.width = '45px';
 nightButton.addEventListener('click', function() {
+  // TODO: maybe we store the preference and then load on visiblity/load changes?
 if (this.value === "Night") {
   for (var i = 0; i < allIframes.length; i++) {
-    allIframes[i].contentWindow.document.getElementsByTagName('html')[0].style.filter = 'invert(1) hue-rotate(180deg)';
-    allIframes[i].contentWindow.document.getElementsByTagName('html')[0].style.background = 'black';
-    document.getElementsByTagName('body')[0].style.background = 'black';
+    // set styles on the <html> in each frame
+    allIframes[i].contentWindow.document.body.parentElement.style.filter = 'invert(1) hue-rotate(180deg)';
+    allIframes[i].contentWindow.document.body.parentElement.style.background = 'black';
+    document.body.style.background = 'black';
   }
 
     // need to check for img elements before altering styles
@@ -98,9 +100,9 @@ if (this.value === "Night") {
     this.value = 'Day';
   } else {
     for (var i = 0; i < allIframes.length; i++) {
-      allIframes[i].contentWindow.document.getElementsByTagName('html')[0].style.filter = 'invert(0) hue-rotate(0deg)';
-      allIframes[i].contentWindow.document.getElementsByTagName('html')[0].style.background = 'white';
-      document.getElementsByTagName('body')[0].style.background = 'white';
+      allIframes[i].contentWindow.document.body.parentElement.style.filter = 'invert(0) hue-rotate(0deg)';
+      allIframes[i].contentWindow.document.body.parentElement.style.background = 'white';
+      document.body.style.background = 'white';
     }
     this.value = 'Night';
   }
