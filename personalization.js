@@ -84,7 +84,7 @@ nightButton.style.borderTopLeftRadius = '0px';
 nightButton.style.height = '45px';
 nightButton.style.width = '45px';
 nightButton.addEventListener('click', function() {
-if (nightLink.value === "Night") {
+if (this.value === "Night") {
   for (var i = 0; i < allIframes.length; i++) {
     allIframes[i].contentWindow.document.getElementsByTagName('html')[0].style.filter = 'invert(1) hue-rotate(180deg)';
     allIframes[i].contentWindow.document.getElementsByTagName('html')[0].style.background = 'black';
@@ -95,14 +95,14 @@ if (nightLink.value === "Night") {
     // code TK... if there's no IMG then getElementsByTagName returns an empty array
     //inside.getElementsByTagName('img').style.filter = 'invert(1) hue-rotate(180deg)';
 
-    nightLink.value = 'Day';
+    this.value = 'Day';
   } else {
     for (var i = 0; i < allIframes.length; i++) {
       allIframes[i].contentWindow.document.getElementsByTagName('html')[0].style.filter = 'invert(0) hue-rotate(0deg)';
       allIframes[i].contentWindow.document.getElementsByTagName('html')[0].style.background = 'white';
       document.getElementsByTagName('body')[0].style.background = 'white';
     }
-    nightLink.value = 'Night';
+    this.value = 'Night';
   }
 }, false);
 document.body.prepend(nightButton);
