@@ -13,7 +13,7 @@ let head = `
     border: none;
   }
   dialog::backdrop {
-    background: rgba(255,0,0,.25);
+    background: rgba(185,207,255,0.5);
   }
 
   #reader {
@@ -80,9 +80,6 @@ readingOrder.forEach((a, i) => {
   })
 });
 
-function navClick(ev) {
-  ;
-}
 prev.addEventListener('click', (ev) => {
   setPrevNext(readingOrder.item(current));
   current--;
