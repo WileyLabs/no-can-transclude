@@ -34,6 +34,10 @@
         border-radius: 0 0 25px 25px;
         border-top: none;
       }
+      #reader .nav a {
+        cursor: pointer;
+        text-decoration: underline;
+      }
       #reader .nav a:first-child {
         float: left;
         margin-left: 1em;
@@ -49,6 +53,7 @@
       <dialog id="reader">
         <div class="nav">
           <a accesskey="p">previous</a>
+          <a accesskey="t" class="toc" title="Table of Contents">close</a>
           <a accesskey="n">next</a>
         </div>
         <iframe name="content-frame"></iframe>
@@ -63,6 +68,12 @@
     let reader = document.getElementById('reader');
 
     // reader nav
+    let toc = reader.querySelector('a.toc');
+    toc.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      reader.close();
+    });
+
     let prev = reader.querySelector('a:first-child');
     let next = reader.querySelector('a:last-child');
 
