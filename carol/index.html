@@ -3,60 +3,81 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>open in iframe</title>
+    <title>A Christmas carol in prose : being a ghost story of Christmas</title>
     <style>
-iframe { display: none; border: none; }
-iframe:target { display: block; }
+/* URL fragment-based state machine */
+article > * { display: none; border: none; }
+article > .default {display: block}
+article > *:target { display: block; }
+article > *:target ~ .default {display: none}
 
 /* layout */
+body {
+  margin:0;
+  padding: 0;
+}
+section.web-publication {
+  display: flex;
+  flex-direction: row;
+  min-height: 99vh;
+}
 nav {
-  float: left;
-  width: 25%;
+  flex: 0 8em;
+  min-width: 8em;
+  padding: 0.5em;
 }
 article {
-  position: absolute;
-  height: 100%;
-  width: 75%;
-  margin-left: 15%;
+  flex: 1;
+  max-height: 99vh;
+
+  display: flex;
+  flex-direction: row;
 }
-article iframe {
-  height: 100%
+article > img {
+  object-fit: contain;
+  object-position: left;
+  margin: 1vh;
+}
+article > iframe {
+  flex: 1;
 }
 </style>
 </head>
 <body>
-  <blockquote>
-    Content is loaded into iframes with <code>id</code> attributes for local,
-    in context, "as part of the publication" references.
-  </blockquote>
-  <nav role="doc-toc">
-    Chapters:
-    <li>
-      <!-- href + the hash fragment sets the URL's hash fragment for state
-        "storage" - allowing for page reload, bookmarking, etc. -->
-      <a href="#chapter1">Stave 1</a>
-    </li>
-    <li>
-      <a href="#chapter2">Stave 2</a>
-    </li>
-    <li>
-      <a href="#chapter3">Stave 3</a>
-    </li>
-    <li>
-      <a href="#chapter4">Stave 4</a>
-    </li>
-    <li>
-      <a href="#chapter5">Stave 5</a>
-    </li>
-  </nav>
+  <section class="web-publication">
+    <nav role="doc-toc">
+      Chapters:
+      <ul>
+        <li>
+          <!-- href + the hash fragment sets the URL's hash fragment for state
+            "storage" - allowing for page reload, bookmarking, etc. -->
+          <a href="#chapter1">Stave 1</a>
+        </li>
+        <li>
+          <a href="#chapter2">Stave 2</a>
+        </li>
+        <li>
+          <a href="#chapter3">Stave 3</a>
+        </li>
+        <li>
+          <a href="#chapter4">Stave 4</a>
+        </li>
+        <li>
+          <a href="#chapter5">Stave 5</a>
+        </li>
+      </ul>
+    </nav>
 
-  <article>
-    <iframe id="chapter1" src="stave1.html"></iframe>
-    <iframe id="chapter2" src="stave2.html"></iframe>
-    <iframe id="chapter3" src="stave3.html"></iframe>
-    <iframe id="chapter4" src="stave4.html"></iframe>
-    <iframe id="chapter5" src="stave5.html"></iframe>
-  </article>
+    <article>
+      <iframe id="chapter1" src="stave1.html"></iframe>
+      <iframe id="chapter2" src="stave2.html"></iframe>
+      <iframe id="chapter3" src="stave3.html"></iframe>
+      <iframe id="chapter4" src="stave4.html"></iframe>
+      <iframe id="chapter5" src="stave5.html"></iframe>
 
-  </body>
+      <img class="default" src="images/cover.png" alt="Front cover of Charle's Dickon's A Christmas Carol" />
+    </article>
+  </section>
+
+</body>
 </html>
